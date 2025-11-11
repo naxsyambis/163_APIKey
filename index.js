@@ -26,3 +26,11 @@ db.connect((err) => {
     console.log('✅ Terkoneksi ke MySQL (api_key_db)');
   }
 });
+
+// ===============================
+// 🔑 FUNGSI GENERATE API KEY
+// ===============================
+function generateApiKey() {
+  const randomBytes = crypto.randomBytes(8).toString('hex'); // 16 karakter hex
+  return `sk-sm-v1-${randomBytes}`;
+}
